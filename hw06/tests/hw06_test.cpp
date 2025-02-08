@@ -63,9 +63,10 @@ TEST(Hw06Tests, Test5)
   Session session = create_session(1, "Die Hard", hall);
 
   // reserve 1 seat
-  reserve_seat(session, 1, 1);
+  reserve_seat(session, 0, 0);
   auto free_seats = get_available_seats(hall);
   auto free_expected_seats = rows * seats_per_row - 1;
+  std::cout << free_seats << std::endl;
   EXPECT_EQ(free_expected_seats, free_seats);
 }
 
